@@ -28,7 +28,7 @@ export default function Main ({ match }) {
   }, [match.params.id])
 
   useEffect(() => {
-    const socket = io(process.env.SOCKET_URL, {
+    const socket = io(process.env.REACT_APP_SOCKET_URL, {
       query: { dev: match.params.id }
     })
     socket.on('match', matchedDev => {
